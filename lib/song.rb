@@ -15,6 +15,6 @@ class Song
   private
   def self.artist_set(new_song, artist)
     new_song.artist = Artist.find_or_create_by_name(artist)
-    new_song.artist.songs << self
+    new_song.artist.add_song(new_song)
   end
 end
